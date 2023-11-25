@@ -3,7 +3,7 @@ import { config } from "dotenv";
 
 
 import cookieParser from "cookie-parser";
-import { testConnection } from "./db/db.js";
+import { testConnection } from "./lib/db.js";
 
 import AuthRouter from "./router/auth.router.js";
 
