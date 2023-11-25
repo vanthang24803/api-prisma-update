@@ -1,11 +1,10 @@
 import express from "express";
 import { config } from "dotenv";
-
-
 import cookieParser from "cookie-parser";
 import { testConnection } from "./lib/db.js";
 
 import AuthRouter from "./router/auth.router.js";
+import PostRouter from "./router/post.router.js";
 
 config();
 
@@ -22,3 +21,4 @@ app.listen(port, () => {
 });
 
 app.use("/api/auth", AuthRouter);
+app.use("/api", PostRouter);

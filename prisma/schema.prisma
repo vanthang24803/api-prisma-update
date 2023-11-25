@@ -23,7 +23,7 @@ model User {
   posts     Post[]
   comments  Comment[]
 
-  postCount    Int @default(0)
+  postCount Int @default(0)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -32,7 +32,8 @@ model User {
 model Post {
   id       String    @id @default(uuid())
   title    String    @db.Text
-  caption  String    @db.Text
+  content  String    @db.Text
+  image    String    @db.Text
   authorId String
   author   User      @relation(fields: [authorId], references: [id])
   comments Comment[]
